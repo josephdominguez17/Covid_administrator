@@ -1,0 +1,26 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-5 w-50">
+
+    <h2 class="mb-4">Update Patient Data</h2>
+
+    <form action="/edit/<%= member.id %>?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+
+        <input type="text" value="<%= member.nameAppointment %>" name="nameAppointment" class="form-control" placeholder="Name">
+
+        <input type="text" value="<%= member.ageAppointment %>" name="ageAppointment" class="form-control" placeholder="Age">
+
+        <input type="text" value="<%= member.numberAppointment %>" name="numberAppointment" class="form-control" placeholder="Number">
+
+        <input type="text" value="<%= member.timeAppointment %>" name="timeAppointment" class="form-control" placeholder="Time">
+
+        <input type="text" value="<%= member.clinicAppointment %>" name="clinicAppointment" class="form-control" placeholder="Clinic">
+
+
+        <button type="submit" class="btn btn-primary btn-block mt-3">Update Patient</button>
+
+    </form>
+</div>
+
+<%- include('partials/footer') -%>

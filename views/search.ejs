@@ -1,0 +1,70 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-5 w-50">
+
+    <h2 class="mb-4">Patient Member </h2>
+
+    <form action="/member" method="GET">
+        <input type="text" name="nameAppointment" class="form-control" placeholder="Name">
+
+        <button type="submit" class="btn btn-primary btn-block mt-3">Search</button>
+
+    </form>
+
+    <% if(member) { %>
+        <h4 class="text-danger my-4">Search Results: </h4>
+        <table class="table table-bordered" width="100%" cellspacing="0">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Time</th>
+                <th>Clinic</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td><%= member.nameAppointment %></td>
+                <td><%= member.ageAppointment %></td>
+                <td><%= member.numberAppointment %></td>
+                <td><%= member.timeAppointment %></td>
+                <td><%= member.clinicAppointment %></td>
+            </tr>
+            </tbody>
+        </table>
+    <% } else if(member != ''){ %>
+
+        <div class="alert alert-danger mt-4">Patient does not exist with this name.</div>
+
+    <% } %>
+
+</div>
+
+<%- include('partials/footer') -%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
